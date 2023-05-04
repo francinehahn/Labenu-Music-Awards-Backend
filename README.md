@@ -1,9 +1,9 @@
 # Labenu Music Awards (LAMA)
 
-## Project description
+## i Project description
 This project was developed to simulate a software that manages a music festival lasting three days. The bands start playing at 8am and finish at 11pm. There are two different types of user roles: ADMIN and NORMAL. Only ADMIN users can register bands and concerts, update concerts and ticket prices, create new tickets and photos, and delete photos.
 
-## Endpoints
+## ☑️ Endpoints
 - Signup
 - Login
 - Get Account Info
@@ -21,26 +21,23 @@ This project was developed to simulate a software that manages a music festival 
 - Get All Photos
 - Delete Photo
 
-## Technologies
+## 💻 Technologies
 - Typescript
 - Express
 - Node.js
 - Jest.js
 - MySQL
 
-## Deploy
-https://lama-fctv.onrender.com
-
-## Documentation
+## 🔗 Documentation
 https://documenter.getpostman.com/view/26335922/2s93JxrMPt
 
-## Running the project
+## 🛰 Running the project
 <pre>
-  <code>git clone https://github.com/future4code/Barros-LAMA12.git</code>
+  <code>git clone https://github.com/francinehahn/Labenu-Music-Awards-Backend.git</code>
 </pre>
 
 <pre>
-  <code>cd Barros-LAMA12</code>
+  <code>cd Labenu-Music-Awards-Backend</code>
 </pre>
 
 <pre>
