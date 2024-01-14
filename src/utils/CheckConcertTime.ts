@@ -25,7 +25,6 @@ export class CheckConcertTime implements ICheckConcertTime {
         }
     }
 
-
     public endTimeFormat (endTime: string): void {
         try {
             const endTimeArray = endTime.split(":")
@@ -43,7 +42,6 @@ export class CheckConcertTime implements ICheckConcertTime {
             throw new CustomError(error.statusCode, error.message)
         }
     }
-
 
     public concertDuration (startTime: string, endTime: string): void {
         try {
@@ -64,19 +62,12 @@ export class CheckConcertTime implements ICheckConcertTime {
         }
     }
 
-
     public async duplicateConcert (weekDay: string, startTime: string, endTime: string, id: string): Promise<void> {
         try {
             const startTimeArray = startTime.split(":")
             const endTimeArray = endTime.split(":")
-    
+            
             let invalidStartTime = await this.concertDatabase.searchConcerts(weekDay, "start_time", startTime)
-            if (invalidStartTime && invalidStartTime.id !== id) {
-                throw new DuplicateConcert()
-            }
-    
-            let editEndTime = Number(startTimeArray[0]) + 1
-            invalidStartTime = await this.concertDatabase.searchConcerts(weekDay, "end_time", `${editEndTime}:00:00`)
             if (invalidStartTime && invalidStartTime.id !== id) {
                 throw new DuplicateConcert()
             }
@@ -85,13 +76,14 @@ export class CheckConcertTime implements ICheckConcertTime {
             if (invalidEndTime && invalidEndTime.id !== id) {
                 throw new DuplicateConcert()
             }
-    
-            let editStartTime = Number(startTimeArray[0]) + 1
-            editEndTime = Number(endTimeArray[0]) + 1
-            invalidStartTime = await this.concertDatabase.searchConcerts(weekDay, "start_time", `${editStartTime}:00:00`)
-            invalidEndTime = await this.concertDatabase.searchConcerts(weekDay, "end_time", `${editEndTime}:00:00`)
-            if (invalidStartTime && invalidEndTime && invalidStartTime.id !== id && invalidEndTime.id !== id) {
-                throw new DuplicateConcert()
+
+            //if the concert has more than one hour of duration
+            if (Number(endTimeArray[0]) - Number(startTimeArray[0]) > 1) {
+                let editStartTime = Number(startTimeArray[0]) + 1
+                invalidStartTime = await this.concertDatabase.searchConcerts(weekDay, "start_time", `${editStartTime}:00:00`)
+                if (invalidStartTime && invalidStartTime.id !== id) {
+                    throw new DuplicateConcert()
+                }
             }
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)

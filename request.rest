@@ -15,7 +15,7 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-    "email": "jp.soares@gmail.com",
+    "email": "fran_hahn@hotmail.com",
     "password": "12345678"
 }
 
@@ -50,14 +50,14 @@ Content-Type: application/json
 
 ### CREATE CONCERT
 POST http://localhost:3003/concerts/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyZDE2MmM5LTcwZjMtNDY0Ny05MDQ0LWI2NTc5NzRlODMzOSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY4MzIwNTY1NSwiZXhwIjoxNjgzMjA5MjU1fQ.XR8d58_hXtkiTa-HGMQ6eORPSFKwHz-EqQI-mOtbvik
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiNmI4NzU2LTBiYTMtNGQ0OS04NGQ5LWIyYjlmOTcxMGM3YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTcwNTI2ODE3MywiZXhwIjoxNzA1MjcxNzczfQ.uFHueJ0iUAbmqK37oba95fauk1XL7muFKEmEi0zDDmY
 Content-Type: application/json
 
 {
-    "weekDay": "saturday",
-    "startTime": "9:00:00",
-    "endTime": "11:00:00",
-    "bandId": "6de48ecb-3583-4a73-bab1-3161a5ca4884"
+    "weekDay": "friday",
+    "startTime": "20:00:00",
+    "endTime": "21:00:00",
+    "bandId": "0ef3556c-71a1-4a99-9143-96a8ffcdd731"
 }
 
 
