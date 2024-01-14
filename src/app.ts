@@ -8,7 +8,7 @@ export const app = express()
 app.use(express.json())
 app.use(cors())
 app.use((req:any, res:any, next:any) => {
-    res.header('Access-Control-Allow-Origin', 'https://labenu-music-awards-frontend.vercel.app/')
+    res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE')
     res.header('Access-Control-Allow-Headers', 'Content-Type')
     next()
